@@ -1,0 +1,11 @@
+node_modules
+template
+.env
+.envg
+2-Step Verification.pdf
+my_wallet.txt
+phrase*.zip
+*.zip
+*.zip
+crescentpips_frontend/crescentpips_ltd_frontend.zip
+../crescentpips_frontend/crescentpips_ltd_frontend.zip
