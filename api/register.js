@@ -23,7 +23,7 @@ Router.post("/", async (req, res) => {
           // referral_link: `https://www.softjovial.com?${u}`,
            account_type:req.body.country =="Kenya"?"KES":"USD",
 
-          referral_link: `https://crescentpips.com?${req.body.email}`,
+          referral_link: `https://crescentpips.ltd?${req.body.email}`,
 
           referral: req.body.referral,
         });
@@ -48,7 +48,7 @@ Router.post("/", async (req, res) => {
       country: req.body.country,
       account_type:req.body.country != "Kenya" ? "USD" : "KES",
       // referral_link: `https://www.softjovial.com?${req.body.email}`,
-      referral_link: `https://crescentpips.com?${req.body.email}`,
+      referral_link: `https://crescentpips.ltd?${req.body.email}`,
 
       referral: req.body.referral,
     });

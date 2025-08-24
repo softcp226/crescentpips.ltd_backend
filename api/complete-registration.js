@@ -51,7 +51,7 @@ password:${process.env.mail_password}`);
 
     const user_result = user.set({
       // referral_link: user._id,
-      referral_link:`https://crescentpips.com?${user._id}`,
+      referral_link:`https://crescentpips.ltd?${user._id}`,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       passport: passport_url.url,

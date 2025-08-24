@@ -135,3 +135,5 @@
 [2025-08-22T11:59:06.024Z] Error: connected to withdrawal request database
 [2025-08-22T11:59:06.024Z] Error: connected to user database
 [2025-08-22T11:59:06.025Z] Error: connected to recover password db
+[2025-08-24T09:22:18.716Z] Error: connected to user database
+[2025-08-24T11:57:10.142Z] Error: connected to user database
