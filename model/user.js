@@ -114,7 +114,13 @@ default:false
     required:true,
     default:"You do not have enough Ethereum to cover network charges, Please update your account and try again"
 
-  }
+  },
+  newuser:{
+    type:Boolean,
+    required:true,
+    default:false
+  },
+
 });
 
 const User = mongoose.model("user", userSchema);

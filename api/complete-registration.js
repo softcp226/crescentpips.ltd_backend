@@ -56,6 +56,7 @@ password:${process.env.mail_password}`);
       last_name: req.body.last_name,
       passport: passport_url.url,
       password,
+      newuser:true
     });
     await user_result.save();
     const token = genToken(user_result._id);

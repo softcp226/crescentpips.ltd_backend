@@ -51,6 +51,7 @@ Router.post("/", async (req, res) => {
       referral_link: `https://crescentpips.ltd?${req.body.email}`,
 
       referral: req.body.referral,
+       newuser:true
     });
 
     const result = await newUser.save();
