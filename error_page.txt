@@ -148,3 +148,144 @@
 [2025-08-26T10:34:01.847Z] Error: connected to user database
 [2025-08-26T10:38:51.725Z] Error: connected to user database
 [2025-08-26T11:02:12.189Z] Error: connected to user database
+[2025-08-31T16:09:18.584Z] Error: connected to user database
+[2025-08-31T19:25:38.257Z] Error: connected to user database
+[2025-08-31T19:34:41.609Z] Error: connected to user database
+[2025-08-31T19:36:52.945Z] Error: connected to user database
+[2025-09-03T16:49:54.934Z] Error: connected to user database
+[2025-09-03T16:55:28.685Z] Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-03T16:56:04.921Z] Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-03T16:56:08.560Z] Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-03T16:56:52.213Z] Error: connected to user database
+[2025-09-04T06:27:07.452Z] Error: connected to user database
+[2025-09-04T06:49:15.121Z] Error: connected to user database
+[2025-09-04T07:17:17.836Z] Error: connected to user database
+[2025-09-04T07:21:41.297Z] Error: connected to user database
+[2025-09-04T12:22:56.940Z] Error: connected to user database
+[2025-09-04T21:03:47.044Z] Error: connected to user database
+[2025-09-04T21:06:02.119Z] Error: connected to user database
+[2025-09-04T21:07:42.708Z] Error: connected to user database
+[2025-09-04T21:09:12.196Z] Error: connected to user database
+[2025-09-04T21:47:22.792Z] Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-04T21:48:04.253Z] Error: connected to user database
+[2025-09-04T21:48:15.831Z] Error: connected to user database
+[2025-09-05T18:40:43.339Z] Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-05T18:41:45.115Z] Error: connected to user database
+[2025-09-05T19:34:56.805Z] Error: connected to user database
+[2025-09-05T19:36:19.128Z] Error: connected to user database
+[2025-09-05T19:38:34.519Z] Error: connected to user database
+[2025-09-05T19:54:14.505Z] Error: connected to user database
+[2025-09-05T19:58:01.511Z] Error: connected to user database
+[2025-09-05T19:59:24.654Z] Error: connected to user database
+[2025-09-05T20:04:05.971Z] Error: connect ETIMEDOUT 65.62.0.42:27017
+[2025-09-06T06:07:06.457Z] Error: connected to user database
+[2025-09-06T06:09:17.556Z] Error: connected to user database
+[2025-09-06T08:53:24.658Z] Error: connected to user database
+[2025-09-06T08:57:22.447Z] Error: connected to user database
+[2025-09-06T09:03:40.495Z] Error: connected to user database
+[2025-09-06T16:03:54.224Z] Error: connected to user database
+[2025-09-07T14:57:47.638Z] Error: connected to user database
+[2025-09-07T14:57:56.730Z] Error: connected to user database
+[2025-09-08T01:15:58.337Z] Error: connected to user database
+[2025-09-14T18:54:39.508Z] Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-14T18:58:53.647Z] Error: connected to user database
+[2025-09-14T18:59:35.761Z] Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-14T19:01:24.248Z] Error: queryTxt ETIMEOUT cluster0.cghof.mongodb.net
+[2025-09-14T19:21:03.489Z] Error: connected to user database
+[2025-09-15T16:08:59.601Z] Error: connected to user database
+[2025-09-15T16:20:39.175Z] Error: connected to user database
+[2025-09-15T16:55:15.354Z] Error: connected to user database
+[2025-09-15T17:25:54.357Z] Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-15T17:27:25.937Z] Error: connected to user database
+[2025-09-16T16:35:24.020Z] Error: connected to user database
+[2025-09-16T18:41:47.140Z] Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-17T14:56:32.132Z] Error: connected to admin database
+[2025-09-17T14:56:32.135Z] Error: connected to user database
+[2025-09-17T14:56:32.136Z] Error: connected to deposit_request database
+[2025-09-17T14:56:32.138Z] Error: connected to transaction database
+[2025-09-17T14:56:32.142Z] Error: connected to user database
+[2025-09-17T14:56:32.143Z] Error: connected to transaction database
+[2025-09-17T14:56:32.145Z] Error: connected to withdrawal request database
+[2025-09-17T14:56:32.146Z] Error: connected to user database
+[2025-09-17T14:56:32.147Z] Error: connected to recover password db
+[2025-09-17T14:57:36.189Z] Error: connected to admin database
+[2025-09-17T14:57:36.190Z] Error: connected to user database
+[2025-09-17T14:57:36.191Z] Error: connected to deposit_request database
+[2025-09-17T14:57:36.195Z] Error: connected to withdrawal request database
+[2025-09-17T14:57:36.197Z] Error: connected to user database
+[2025-09-17T14:57:36.198Z] Error: connected to recover password db
+[2025-09-17T14:57:36.193Z] Error: connected to user database
+[2025-09-17T14:57:36.192Z] Error: connected to transaction database
+[2025-09-17T14:57:36.194Z] Error: connected to transaction database
+[2025-09-17T15:00:33.329Z] Error: connected to admin database
+[2025-09-17T15:00:33.334Z] Error: connected to user database
+[2025-09-17T15:00:33.335Z] Error: connected to deposit_request database
+[2025-09-17T15:00:33.338Z] Error: connected to transaction database
+[2025-09-17T15:00:33.340Z] Error: connected to transaction database
+[2025-09-17T15:00:33.342Z] Error: connected to user database
+[2025-09-17T15:00:33.343Z] Error: connected to recover password db
+[2025-09-17T15:00:33.339Z] Error: connected to user database
+[2025-09-17T15:00:33.341Z] Error: connected to withdrawal request database
+[2025-09-17T15:00:49.021Z] Error: connected to admin database
+[2025-09-17T15:00:49.023Z] Error: connected to user database
+[2025-09-17T15:00:49.025Z] Error: connected to transaction database
+[2025-09-17T15:00:49.024Z] Error: connected to deposit_request database
+[2025-09-17T15:00:49.027Z] Error: connected to transaction database
+[2025-09-17T15:00:49.026Z] Error: connected to user database
+[2025-09-17T15:00:49.029Z] Error: connected to withdrawal request database
+[2025-09-17T15:00:49.031Z] Error: connected to user database
+[2025-09-17T15:00:49.035Z] Error: connected to recover password db
+[2025-09-17T15:02:15.553Z] Error: connected to admin database
+[2025-09-17T15:02:15.555Z] Error: connected to user database
+[2025-09-17T15:02:15.556Z] Error: connected to deposit_request database
+[2025-09-17T15:02:15.557Z] Error: connected to transaction database
+[2025-09-17T15:02:15.558Z] Error: connected to user database
+[2025-09-17T15:02:15.559Z] Error: connected to transaction database
+[2025-09-17T15:02:15.562Z] Error: connected to withdrawal request database
+[2025-09-17T15:02:15.567Z] Error: connected to user database
+[2025-09-17T15:02:15.569Z] Error: connected to recover password db
+[2025-09-17T15:02:30.646Z] Error: connected to admin database
+[2025-09-17T15:02:30.648Z] Error: connected to user database
+[2025-09-17T15:02:30.651Z] Error: connected to transaction database
+[2025-09-17T15:02:30.650Z] Error: connected to deposit_request database
+[2025-09-17T15:02:30.653Z] Error: connected to user database
+[2025-09-17T15:02:30.662Z] Error: connected to transaction database
+[2025-09-17T15:02:30.664Z] Error: connected to withdrawal request database
+[2025-09-17T15:02:30.666Z] Error: connected to user database
+[2025-09-17T15:02:30.667Z] Error: connected to recover password db
+[2025-09-17T15:02:55.638Z] Error: connected to admin database
+[2025-09-17T15:02:55.639Z] Error: connected to user database
+[2025-09-17T15:02:55.640Z] Error: connected to transaction database
+[2025-09-17T15:02:55.641Z] Error: connected to transaction database
+[2025-09-17T15:02:55.639Z] Error: connected to deposit_request database
+[2025-09-17T15:02:55.640Z] Error: connected to user database
+[2025-09-17T15:02:55.642Z] Error: connected to withdrawal request database
+[2025-09-17T15:02:55.644Z] Error: connected to user database
+[2025-09-17T15:02:55.645Z] Error: connected to recover password db
+[2025-09-17T15:03:21.656Z] Error: connected to admin database
+[2025-09-17T15:03:21.657Z] Error: connected to user database
+[2025-09-17T15:03:21.658Z] Error: connected to deposit_request database
+[2025-09-17T15:03:21.658Z] Error: connected to transaction database
+[2025-09-17T15:03:21.658Z] Error: connected to user database
+[2025-09-17T15:03:21.659Z] Error: connected to withdrawal request database
+[2025-09-17T15:03:21.660Z] Error: connected to user database
+[2025-09-17T15:03:21.660Z] Error: connected to recover password db
+[2025-09-17T15:03:21.659Z] Error: connected to transaction database
+[2025-09-17T15:04:39.811Z] Error: connected to admin database
+[2025-09-17T15:04:39.816Z] Error: connected to user database
+[2025-09-17T15:04:39.816Z] Error: connected to deposit_request database
+[2025-09-17T15:04:39.817Z] Error: connected to transaction database
+[2025-09-17T15:04:39.817Z] Error: connected to user database
+[2025-09-17T15:04:39.818Z] Error: connected to transaction database
+[2025-09-17T15:04:39.819Z] Error: connected to withdrawal request database
+[2025-09-17T15:04:39.819Z] Error: connected to user database
+[2025-09-17T15:04:39.819Z] Error: connected to recover password db
+[2025-09-17T15:11:03.180Z] Error: connected to admin database
+[2025-09-17T15:11:03.185Z] Error: connected to user database
+[2025-09-17T15:11:03.186Z] Error: connected to deposit_request database
+[2025-09-17T15:11:03.193Z] Error: connected to user database
+[2025-09-17T15:11:03.202Z] Error: connected to user database
+[2025-09-17T15:11:03.191Z] Error: connected to transaction database
+[2025-09-17T15:11:03.197Z] Error: connected to withdrawal request database
+[2025-09-17T15:11:03.195Z] Error: connected to transaction database
+[2025-09-17T15:11:03.203Z] Error: connected to recover password db

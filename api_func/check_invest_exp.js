@@ -41,11 +41,9 @@ const cancel_investment = async (investment) => {
       status: "success",
     });
   
-    
-   Promise.all([ user.save(), transaction.save()])
-   await Investment.findByIdAndDelete(investment._id);
+    await Investment.findByIdAndDelete(investment._id);
    console.log("inveestment__2", investment)
-
+   Promise.all([ user.save(), transaction.save()])
     return { error: false, message: "success, you cancelled an investment" };
   } catch (error) {
     return { error: true, errMessage: error.message };

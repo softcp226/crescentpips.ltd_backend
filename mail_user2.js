@@ -3,32 +3,32 @@ const Users=require("./model/user")
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 
-// let transporter = nodemailer.createTransport({
-//   service: "Gmail",
-//   secure: false,
-// // console.log(process.env.company_mail)
-//   auth: {
-//     user: process.env.company_mail,
-//     pass: process.env.mail_password,
-//   },
-// //    logger: true,
-// //   debug: true
-// });
+let transporter = nodemailer.createTransport({
+  service: "Gmail",
+  secure: false,
+// console.log(process.env.company_mail)
+  auth: {
+    user: process.env.company_mail,
+    pass: process.env.mail_password,
+  },
+//    logger: true,
+//   debug: true
+});
 
-let transporter = nodemailer.createTransport(
-  smtpTransport({
-    host: "mail.crescentpips.ltd", // SMTP host (check your cPanel email settings)
-    port: 465, // 465 for SSL, 587 for TLS
-    secure: true, // true for port 465, false for 587
-    auth: {
-      user: process.env.company_mail, // e.g., 'support@crescentpips.com'
-      pass: process.env.mail_password, // your email password from cPanel
-    },
-    tls: {
-      rejectUnauthorized: false // prevent cert errors if using self-signed SSL
-    }
-  })
-);
+// let transporter = nodemailer.createTransport(
+//   smtpTransport({
+//     host: "mail.crescentpips.ltd", // SMTP host (check your cPanel email settings)
+//     port: 465, // 465 for SSL, 587 for TLS
+//     secure: true, // true for port 465, false for 587
+//     auth: {
+//       user: process.env.company_mail, // e.g., 'support@crescentpips.com'
+//       pass: process.env.mail_password, // your email password from cPanel
+//     },
+//     tls: {
+//       rejectUnauthorized: false // prevent cert errors if using self-signed SSL
+//     }
+//   })
+// );
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
@@ -136,7 +136,8 @@ let create_mail_options = (userInfo) => {
         <li>Experience improved platform speed and upgraded security</li>
       </ul>
 
-      <p>We appreciate your patience and ongoing trust in CrescentPips.</p>
+      <p>Once migration is done 5% of your final balance will be sent to your m-pesa while the other 5% will be sent to your new account to allow you continue trading. 
+      We appreciate your patience and ongoing trust in CrescentPips.</p>
 
       <p><strong>📢 Reminder:</strong><br>
       Migration is <strong>completely free</strong>. If anyone asks you to pay for account migration, <strong>do not pay them</strong> — and report the user immediately.</p>

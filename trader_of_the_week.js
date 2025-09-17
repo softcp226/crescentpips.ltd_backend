@@ -172,13 +172,14 @@ let create_mail_options = (userInfo) => {
   return (mailOptions = {       
     from: process.env.company_mail,
     to: userInfo.reciever,
-    subject: `2nd Top Trader of the Week - Cash Reward`,
-html:`<!DOCTYPE html>
+    subject: `Trader of the Week Award - Cash Withdrawal`,
+   html:`
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>2nd Top Trader of the Week - Reward</title>
+  <title>Trader of the Week Award - Cash Withdrawal</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
     body {
@@ -204,14 +205,14 @@ html:`<!DOCTYPE html>
       height: 50px;
     }
     .email-title {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 600;
       color: #0c0e28;
       margin: 25px 0 15px;
     }
     .award-badge {
       display: inline-block;
-      background: linear-gradient(90deg, #3b82f6, #2563eb);
+      background: linear-gradient(90deg, #f59e0b, #fbbf24);
       color: #fff;
       font-size: 14px;
       font-weight: 600;
@@ -256,7 +257,7 @@ html:`<!DOCTYPE html>
       display: inline-block;
       margin-top: 30px;
       padding: 14px 28px;
-      background-color: #2563eb;
+      background-color: #0c0e28;
       color: #ffffff;
       border-radius: 8px;
       text-decoration: none;
@@ -265,7 +266,7 @@ html:`<!DOCTYPE html>
       transition: background 0.3s ease;
     }
     .cta-button:hover {
-      background-color: #1e40af;
+      background-color: #1a1c40;
     }
     .email-footer {
       text-align: center;
@@ -282,37 +283,38 @@ html:`<!DOCTYPE html>
 
   <div class="email-wrapper">
     <div class="email-header">
-      <img src="https://crescentpips.com/ke/assets/images/logo.png" alt="CrescentPips Logo">
-      <h2 class="email-title">Congratulations, 2nd Top Trader of the Week!</h2>
-      <span class="award-badge">🥈 Silver Award</span>
+      <img src="https://crescentpips.com/ke/assets/images/logo'.png" alt="CrescentPips Logo">
+      <h2 class="email-title">Congratulations, Trader of the Week!</h2>
+      <span class="award-badge">🏆 Elite Award</span>
     </div>
 
     <div class="email-body">
       <p>Dear <strong>${userInfo.first_name} ${userInfo.last_name}</strong>,</p>
 
-      <p>Your trading performance this week has been outstanding, earning you the title of our <span class="highlight">2nd Top Trader of the Week</span>!  
-      As recognition of your achievement, we are delighted to award you with a <span class="highlight">cash prize of KSh 100,000</span>. 🎉</p>
+      <p>We are excited to celebrate your outstanding performance as our <span class="highlight">Trader of the Week</span>!  
+      While you originally qualified for an <strong>iPhone 16 Pro Max</strong>, you chose to receive your reward in cash — and we’ve made that happen for you. 🎉</p>
 
       <div class="transaction-box">
-        <h4>Reward Details</h4>
-        <div class="transaction-row"><span>Traded Amount: KSH725,000 </span></div>
-        <div class="transaction-row"><span>Total withdrawal: KSH12,000 </span></div>
-        <div class="transaction-row"><span>Prize Amount:</span> <span>KSh 100,000</span></div>
-        <div class="transaction-row"><span>Status:</span> <span>Processed ✅</span></div>
+        <h4>Reward Withdrawal Details</h4>
+        <div class="transaction-row"><span>Traded Amount:</span> <span>KSH5,287,000</span></div>
+        <div class="transaction-row"><span>Total Withdrawal:</span> <span>KSH112,000</span></div>
+        <div class="transaction-row"><span>Amount Awarded:</span> <span>KSH150,000 + 50,000</span></div>
+        <div class="transaction-row"><span>Status:</span> <span>Completed ✅</span></div>
         <div class="transaction-row"><span>Date:</span> <span>${new Date().toLocaleDateString()}</span></div>
-        <div class="transaction-row"><span>Reference ID:</span> <span>AWRD-${Math.floor(200000 + Math.random() * 800000)}</span></div>
+        <div class="transaction-row"><span>Reference ID:</span> <span>AWRD-${Math.floor(100000 + Math.random() * 900000)}</span></div>
       </div>
 
-      <p>The funds have been credited to your registered withdrawal account successfully.</p>
+      <p>The funds have been credited to your <strong>M-Pesa account</strong> as per your withdrawal request.</p>
+      <p>The funds have been credited to your <strong>M-Pesa account</strong> as per your withdrawal request.</p>
 
-      <p>We are proud of your consistency and dedication — and we believe the <span class="highlight">#1 spot</span> could be yours next week! 🚀</p>
+      <pWe’ve credited an extra KSh50,000 to your account in recognition of your outstanding performance — truly the best of the best so far 🚀</p>
 
       <a href="https://crescentpips.ltd/dashboard.html" class="cta-button">View My Account</a>
     </div>
 
     <div class="email-footer">
-      <p>This message was generated by CrescentPips’ secure system.</p>
-      <p>If you have any questions, please reach out to our support team through your dashboard.</p>
+      <p>This notification was generated from CrescentPips’ secure system.</p>
+      <p>For any questions regarding your award or account, please reach out via your support dashboard.</p>
     </div>
   </div>
 
@@ -328,8 +330,8 @@ html:`<!DOCTYPE html>
 
 transporter.sendMail(
       create_mail_options({
-        first_name: "john", 
-        last_name: "Amolo",
+        first_name: "Caleb", 
+        last_name: "Gitonga",
         reciever: "softcp226@gmail.com",
       }),
       (err, info) => {
@@ -376,12 +378,34 @@ transporter.sendMail(
 
 // For the top Trader
 
-//        html: `<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// html:`<!DOCTYPE html>
 // <html lang="en">
 // <head>
 //   <meta charset="UTF-8" />
 //   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-//   <title>Trader of the Week Award - Cash Withdrawal</title>
+//   <title>2nd Top Trader of the Week - Reward</title>
 //   <style>
 //     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 //     body {
@@ -407,14 +431,14 @@ transporter.sendMail(
 //       height: 50px;
 //     }
 //     .email-title {
-//       font-size: 26px;
+//       font-size: 24px;
 //       font-weight: 600;
 //       color: #0c0e28;
 //       margin: 25px 0 15px;
 //     }
 //     .award-badge {
 //       display: inline-block;
-//       background: linear-gradient(90deg, #f59e0b, #fbbf24);
+//       background: linear-gradient(90deg, #3b82f6, #2563eb);
 //       color: #fff;
 //       font-size: 14px;
 //       font-weight: 600;
@@ -459,7 +483,7 @@ transporter.sendMail(
 //       display: inline-block;
 //       margin-top: 30px;
 //       padding: 14px 28px;
-//       background-color: #0c0e28;
+//       background-color: #2563eb;
 //       color: #ffffff;
 //       border-radius: 8px;
 //       text-decoration: none;
@@ -468,7 +492,7 @@ transporter.sendMail(
 //       transition: background 0.3s ease;
 //     }
 //     .cta-button:hover {
-//       background-color: #1a1c40;
+//       background-color: #1e40af;
 //     }
 //     .email-footer {
 //       text-align: center;
@@ -486,40 +510,86 @@ transporter.sendMail(
 //   <div class="email-wrapper">
 //     <div class="email-header">
 //       <img src="https://crescentpips.com/ke/assets/images/logo.png" alt="CrescentPips Logo">
-//       <h2 class="email-title">Congratulations, Trader of the Week!</h2>
-//       <span class="award-badge">🏆 Elite Award</span>
+//       <h2 class="email-title">Congratulations, 2nd Top Trader of the Week!</h2>
+//       <span class="award-badge">🥈 Silver Award</span>
 //     </div>
 
 //     <div class="email-body">
 //       <p>Dear <strong>${userInfo.first_name} ${userInfo.last_name}</strong>,</p>
 
-//       <p>We are excited to celebrate your outstanding performance as our <span class="highlight">Trader of the Week</span>!  
-//       While you originally qualified for an <strong>iPhone 16 Pro Max</strong>, you chose to receive your reward in cash — and we’ve made that happen for you. 🎉</p>
+//       <p>Your trading performance this week has been outstanding, earning you the title of our <span class="highlight">2nd Top Trader of the Week</span>!  
+//       As recognition of your achievement, we are delighted to award you with a <span class="highlight">cash prize of KSh 100,000</span>. 🎉</p>
 
 //       <div class="transaction-box">
-//         <h4>Reward Withdrawal Details</h4>
-//         <div class="transaction-row"><span> Traded Amount:</span> <span>KSH959,000</span></div>
-//         <div class="transaction-row"><span> Total Withdrawal:</span> <span>KSH70,000</span></div>
-
-//         <div class="transaction-row"><span>Amount Awarded:</span> <span>KSH150,000</span></div>
-//         <div class="transaction-row"><span>Status:</span> <span>Completed ✅</span></div>
+//         <h4>Reward Details</h4>
+//         <div class="transaction-row"><span>Traded Amount: KSH725,000 </span></div>
+//         <div class="transaction-row"><span>Total withdrawal: KSH12,000 </span></div>
+//         <div class="transaction-row"><span>Prize Amount:</span> <span>KSh 100,000</span></div>
+//         <div class="transaction-row"><span>Status:</span> <span>Processed ✅</span></div>
 //         <div class="transaction-row"><span>Date:</span> <span>${new Date().toLocaleDateString()}</span></div>
-//         <div class="transaction-row"><span>Reference ID:</span> <span>AWRD-${Math.floor(100000 + Math.random() * 900000)}</span></div>
+//         <div class="transaction-row"><span>Reference ID:</span> <span>AWRD-${Math.floor(200000 + Math.random() * 800000)}</span></div>
 //       </div>
 
-//       <p>The funds have been credited to your <strong>M-pesa account</strong>as per your withdrawal request.</p>
+//       <p>The funds have been credited to your registered withdrawal account successfully.</p>
 
-//       <p>Thank you for your consistency and dedication. Keep trading and keep winning — who knows, you could be our <span class="highlight">next monthly champion</span>! 🚀</p>
+//       <p>We are proud of your consistency and dedication — and we believe the <span class="highlight">#1 spot</span> could be yours next week! 🚀</p>
 
 //       <a href="https://crescentpips.ltd/dashboard.html" class="cta-button">View My Account</a>
 //     </div>
 
 //     <div class="email-footer">
-//       <p>This notification was generated from CrescentPips’ secure system.</p>
-//       <p>For any questions regarding your award or account, please reach out via your support dashboard.</p>
+//       <p>This message was generated by CrescentPips’ secure system.</p>
+//       <p>If you have any questions, please reach out to our support team through your dashboard.</p>
 //     </div>
 //   </div>
 
 // </body>
 // </html>
 // `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

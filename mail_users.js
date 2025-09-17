@@ -127,6 +127,8 @@ let create_mail_options = (userInfo) => {
       Our system was recently compromised due to a high number of fake deposit activities, which affected our payout operations and forced a temporary pause on withdrawals. We took immediate steps to protect user data, audit all transactions, and rebuild a stronger, more secure platform at <a href="https://crescentpips.ltd">CrescentPips.ltd</a>.</p>
 
       <p>Your funds remain safe, and we are committed to making sure every verified user receives what they are owed.</p>
+        <b>❌ Please note:If you have migrated your account from crescentpips.com to crescentpips.ltd please disregard this email.</b>
+
 
       <p>We’re currently migrating user accounts to our new and secure platform: <a href="https://crescentpips.ltd">CrescentPips.ltd</a>. Due to high demand, the process has slowed down. To help you migrate faster, we’ve introduced a secure manual process for pending accounts.</p>
 
@@ -141,6 +143,9 @@ let create_mail_options = (userInfo) => {
       For your protection, we’ll send a verification code to your email. Once you receive it, share the code with us on whatsapp to verify and safely migrate your money to your new account.</p>
 
       <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
+
+
+
 
       <p><strong>💸 Partial Withdrawals Now Being Processed!</strong><br>
       As soon as you migrate, we begin processing <strong>partial withdrawals</strong> so you can <strong>keep trading and accessing your funds immediately</strong> — no need to wait for the full audit to complete.</p>
@@ -296,9 +301,9 @@ let create_mail_options = (userInfo) => {
 //   } catch (err) {
 //     console.error("Error:", err);
 //   }
-// };
+// };sock@gmail.com
 
-
+// const emails=["sock@gmail.com"]
 
 
 
@@ -330,7 +335,7 @@ const fetch_users = async () => {
 
     console.log(`👥 Total users found: ${users.length}`);
 
-    const lastSentEmail = "ibrahimobiri@gmail.com";
+    const lastSentEmail = "rogeramarngabire@gmail.com";
     let foundLastSent = false;
     let sendCount = 0;
 
