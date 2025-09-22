@@ -289,3 +289,11 @@
 [2025-09-17T15:11:03.197Z] Error: connected to withdrawal request database
 [2025-09-17T15:11:03.195Z] Error: connected to transaction database
 [2025-09-17T15:11:03.203Z] Error: connected to recover password db
+[2025-09-17T22:35:53.764Z] Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cghof.mongodb.net
+[2025-09-17T22:37:24.573Z] Error: connected to user database
+[2025-09-19T09:31:29.739Z] Error: connected to user database
+[2025-09-22T02:42:54.395Z] Error: connected to user database
+[2025-09-22T03:26:23.466Z] Error: connected to user database
+[2025-09-22T03:46:49.309Z] Error: connected to user database
+[2025-09-22T03:58:29.040Z] Error: connected to user database
+[2025-09-22T04:04:54.603Z] Error: connected to user database

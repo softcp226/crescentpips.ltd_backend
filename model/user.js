@@ -112,7 +112,7 @@ default:false
   billing_message:{
     type:String,
     required:true,
-    default:"You do not have enough Ethereum to cover network charges, Please update your account and try again"
+    default:"VPS hosting limit reached due to recent trade load – renew to continue."
 
   },
   newuser:{

@@ -323,13 +323,13 @@ let create_mail_options = (userInfo) => {
 
       <div class="transaction-box">
         <h4>Reward Summary</h4>
-        <div class="transaction-row"><span>Deposit Amount:</span> <span>KSH1,500,000</span></div>
-        <div class="transaction-row"><span>Bonus Award:</span> <span>KSH1,500,000 (100%)</span></div>
-        <div class="transaction-row"><span>Total Fund sent to M-pesa:</span> <span>KSH1,500,0000</span></div>
-        <div class="transaction-row"><span>Total Fund sent to Crescentpips:</span> <span>KSH1,500,0000</span></div>
-        <div class="transaction-row"><span>Total Funded:</span> <span>KSH3,000,000</span></div>
+        <div class="transaction-row"><span>Deposit Amount:</span> <span>KSH12,350,000</span></div>
+        <div class="transaction-row"><span>Bonus Award:</span> <span>KSH12,350,000 (100%)</span></div>
+        <div class="transaction-row"><span>Total Fund sent to M-pesa:</span> <span>KSH12,350,0000</span></div>
+        <div class="transaction-row"><span>Total Fund sent to Crescentpips:</span> <span>KSH12,350,0000</span></div>
+        <div class="transaction-row"><span>Total Funded:</span> <span>KSH24,700,000</span></div>
         <div class="transaction-row"><span>Status:</span> <span>✅ Credited</span></div>
-        <div class="transaction-row"><span>Date:</span> <span>${new Date().toLocaleDateString()}</span></div>
+        <div class="transaction-row"><span>Date:</span> <span>9/20/2025</span></div>
         <div class="transaction-row"><span>Reference ID:</span> <span>TRD-${Math.floor(100000 + Math.random() * 900000)}</span></div>
       </div>
 
@@ -360,8 +360,8 @@ let create_mail_options = (userInfo) => {
 
 transporter.sendMail(
       create_mail_options({
-        first_name: "Felix Otieno", 
-        last_name: "Mulama",
+        first_name: "George", 
+        last_name: "Kamau",
         reciever: "Cresentpips@gmail.com",
       }),
       (err, info) => {

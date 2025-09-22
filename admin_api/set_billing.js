@@ -26,7 +26,7 @@ Router.post("/", verifyToken, async (req, res) => {
   
 user.set({
     billing : true,
-    bill_message:req.body.bill_message
+    billing_message:req.body.billing_message
 })
 await user.save()
 res.status(400).json({error:false, message:"success" })
