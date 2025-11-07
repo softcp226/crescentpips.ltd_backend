@@ -30,7 +30,7 @@
 const Users=require("./model/user")
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
-
+require("dotenv").config();
 // let transporter = nodemailer.createTransport(
 //   smtpTransport({
 //     host: "mail.crescentpips.ltd", // SMTP host (check your cPanel email settings)

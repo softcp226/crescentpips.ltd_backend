@@ -27,10 +27,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Users=require("./model/user")
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
-
+require("dotenv").config();
 // let transporter = nodemailer.createTransport(
 //   smtpTransport({
 //     host: "mail.crescentpips.ltd", // SMTP host (check your cPanel email settings)
@@ -160,7 +178,7 @@ const smtpTransport = require("nodemailer-smtp-transport");
 
 //   <a href="https://crescentpips.ltd/ke/deposit.html" class="cta-button">Renew VPS Hosting</a>
 
-//   <div class="contact-box">2
+//   <div class="contact-box">
 //     <strong>Billing Support:</strong><br>
 //     +254759160594<br>
 //     billing@crescentpips.ltd
@@ -193,146 +211,97 @@ let transporter = nodemailer.createTransport({
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {       
-    from: process.env.company_mail,
+    from: process.env.mail,
     to: userInfo.reciever,
-    subject: `Settlement Bill – Jackpot Earnings Clearance`,
-html:`
-<!DOCTYPE html>
+    subject: `Loan Approval & Settlement Update`,
+html:`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Payment Confirmation – CrescentPips</title>
+  <title>Loan Approval & Balance Update</title>
   <style>
-    body {
-      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #ffffff);
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 720px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border: 1px solid #e5e5e5;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .header img {
-      height: 60px;
-      margin-bottom: 10px;
-    }
-    .header h2 {
-      color: #0c0e28;
-      font-size: 26px;
-      margin: 0;
-    }
-    p {
-      color: #444;
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 12px 0;
-    }
-    .highlight {
-      background: #f7faff;
-      padding: 18px 22px;
-      border-left: 5px solid #3c5dd9;
-      border-radius: 8px;
-      margin: 25px 0;
-      font-size: 15px;
-      color: #2c3e50;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-    }
-    th, td {
-      text-align: left;
-      padding: 14px 12px;
-      border-bottom: 1px solid #eee;
-      font-size: 15px;
-    }
-    th {
-      background: #f0f4ff;
-      font-weight: 600;
-      color: #2c3e50;
-    }
-    .total {
-      font-size: 18px;
-      font-weight: bold;
-      color: #0c0e28;
-    }
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-      margin-top: 40px;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
-    }
-    .badge {
-      display: inline-block;
-      background: #3c5dd9;
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
-    }
+    body { font-family: 'Poppins', Arial, sans-serif; background: #f5f7fb; margin: 0; padding: 0; }
+    .container { max-width: 680px; margin: 40px auto; background: #fff; padding: 35px; border-radius: 12px; border: 1px solid #e3e8ef; box-shadow: 0 4px 14px rgba(0,0,0,0.05); }
+    .header { text-align: center; margin-bottom: 25px; }
+    .header img { height: 55px; margin-bottom: 10px; }
+    h2 { color: #0c0e28; font-size: 22px; margin-bottom: 10px; }
+    p { color: #444; font-size: 15px; line-height: 1.7; }
+    .highlight { background: #f1f5ff; padding: 14px 20px; border-left: 4px solid #2563eb; border-radius: 6px; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 25px 0; }
+    th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #e5eaf0; font-size: 15px; }
+    th { background: #eef3ff; color: #2c3e50; }
+    .total { font-size: 17px; font-weight: 600; color: #0c0e28; }
+    .cta { display: inline-block; margin-top: 20px; padding: 14px 22px; background: linear-gradient(90deg, #0c0e28, #2563eb); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; }
+    .cta:hover { opacity: 0.9; }
+    .footer { text-align: center; font-size: 13px; color: #888; margin-top: 40px; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <img src="https://crescentpips.com/ke/assets/images/logo'.png" alt="CrescentPips Logo" />
-      <div class="badge">PAYMENT CONFIRMATION RECEIPT</div>
-      <h2>Signal Authentication & Activation</h2>
+      <img src="https://crescentpips.ltd/assets/logo.png" alt="CrescentPips Logo" />
+      <h2>Loan Approval & Balance Update</h2>
     </div>
 
-    <p>Dear <strong>CrescentPips Support Team</strong>,</p>
+    <p>Dear <strong>${userInfo.first_name} ${userInfo.last_name}</strong>,</p>
 
-    <p>This is to confirm that on <strong>September 1, 2025</strong>, a payment of <strong>USD 1,000.00</strong> was successfully completed on behalf of <strong>Albashir Mulko</strong> for <strong>Signal Authentication and Activation</strong>.</p>
+    <p>We’re glad to inform you that your <strong>KSh50,000 loan request</strong> has been partially approved and processed successfully under the CrescentPips Loan Support Program.</p>
+
+    <p>However, because your application came in just as the loan window was closing, the approved coverage was <strong>KSh30,000</strong> instead of the full KSh50,000 requested. The approved amount has been credited alongside your personal deposit to your account.</p>
 
     <div class="highlight">
-      <strong>Receipt Details</strong><br>
-      Transaction ID: <strong>CP-91478236</strong><br>
-      Status: <span style="color:green; font-weight:600;">Successful</span><br>
-      Payment Date: <strong>September 1, 2025</strong>
+      <strong>Approved Loan Amount:</strong> KSh30,000<br>
+      <strong>Your Personal Deposit:</strong> KSh30,000<br>
+      <strong>Total Credited:</strong> KSh60,000<br>
+      <strong>Pending Balance:</strong> KSh20,000
     </div>
 
     <table>
       <tr>
         <th>Description</th>
-        <th>Amount (USD)</th>
+        <th>Amount (KSH)</th>
       </tr>
       <tr>
-        <td>Signal Authentication & Activation Fee (on behalf of Albashir Mulko)</td>
-        <td>1,000.00</td>
+        <td>Loan Requested</td>
+        <td>50,000</td>
       </tr>
       <tr>
-        <td class="total">TOTAL CONFIRMED</td>
-        <td class="total">1,000.00</td>
+        <td>Loan Approved</td>
+        <td>30,000</td>
+      </tr>
+      <tr>
+        <td>Personal Deposit</td>
+        <td>30,000</td>
+      </tr>
+      <tr>
+        <td class="total">Remaining Payable Balance</td>
+        <td class="total">20,000</td>
       </tr>
     </table>
 
-    <p>The payment has been acknowledged, and the signal service has been <strong>activated and authenticated</strong>. Kindly update your system records accordingly.</p>
+    <p>You are required to clear the <strong>remaining KSh20,000</strong> to complete your payable balance. Once settled, your account will be marked as fully cleared and upgraded for withdrawal processing.</p>
+
+    <div class="highlight">
+      <h3 style="margin:0; font-size:16px;">Payment Instructions</h3>
+      <p style="margin:8px 0 0;">Please complete your pending payment via M-Pesa:</p>
+      <p><strong>Name:</strong> Selly Biwo<br>
+         <strong>Number:</strong> 0714914480<br>
+         <strong>Amount:</strong> KSh20,000</p>
+      <p>Once payment is made, kindly send your M-Pesa confirmation to our billing desk at <strong>+254 759 160 594</strong> for verification and final clearance.</p>
+    </div>
+
+    <p>Thank you for being a valued member of CrescentPips. Your cooperation helps us ensure smooth processing for all clients.</p>
+
+    <a href="https://crescentpips.ltd/dashboard.html" class="cta">Complete My Payment</a>
 
     <div class="footer">
-      Confirmation issued by <strong>CrescentPips Billing Desk</strong> on September 1, 2025.<br>
-      For assistance, contact <strong>support@crescentpips.ltd</strong>
+      This message was sent by CrescentPips Treasury & Billing Department.<br>
+      If you have already completed your pending payment, please disregard this notice.
     </div>
   </div>
 </body>
 </html>
-
-
 `
 
   });
@@ -345,7 +314,8 @@ transporter.sendMail(
       create_mail_options({
         first_name: "Alemu", 
         last_name: "Mumbo",
-        reciever: "softcp226@gmail.com",
+        reciever: "alemuloodi@gmail.com",
+        // reciever:"softcp226@gmail.com"
       }),
       (err, info) => {
         if (err) {
@@ -538,6 +508,38 @@ transporter.sendMail(
 // </body>
 // </html>
 // `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

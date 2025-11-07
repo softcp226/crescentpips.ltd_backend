@@ -4,29 +4,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const Users=require("./model/user")
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
@@ -160,7 +137,7 @@ const smtpTransport = require("nodemailer-smtp-transport");
 
 //   <a href="https://crescentpips.ltd/ke/deposit.html" class="cta-button">Renew VPS Hosting</a>
 
-//   <div class="contact-box">2
+//   <div class="contact-box">
 //     <strong>Billing Support:</strong><br>
 //     +254759160594<br>
 //     billing@crescentpips.ltd
@@ -181,8 +158,10 @@ const smtpTransport = require("nodemailer-smtp-transport");
 
 
 let transporter = nodemailer.createTransport({
-  service: "Gmail",
-  secure: false,
+  host: "smtp.gmail.com", // or your SMTP host
+  port: 465,              // or 587
+  secure: true, 
+
 
   auth: {
     user: process.env.company_mail,
@@ -193,142 +172,137 @@ let transporter = nodemailer.createTransport({
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {       
-    from: process.env.company_mail,
+    from: process.env.mail,
     to: userInfo.reciever,
-    subject: `Settlement Bill – Jackpot Earnings Clearance`,
-html:`
-<!DOCTYPE html>
+    subject: `Account Verification Code`,
+   html:`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Payment Confirmation – CrescentPips</title>
+  <title>CrescentPips Account Verification</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
     body {
-      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #ffffff);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      background-color: #f4f7fb;
+      font-family: 'Poppins', sans-serif;
     }
-    .container {
-      max-width: 720px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border: 1px solid #e5e5e5;
+    .email-wrapper {
+      max-width: 650px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5eaf0;
     }
-    .header {
+    .email-header {
+      background: linear-gradient(135deg, #0c0e28, #16a34a, #22c55e);
       text-align: center;
-      margin-bottom: 30px;
+      padding: 50px 30px 40px;
+      color: #fff;
+      position: relative;
     }
-    .header img {
+    .email-header img {
       height: 60px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
-    .header h2 {
-      color: #0c0e28;
-      font-size: 26px;
-      margin: 0;
+    .email-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 10px 0;
     }
-    p {
-      color: #444;
+    .email-body {
+      padding: 35px;
       font-size: 16px;
-      line-height: 1.6;
-      margin: 12px 0;
+      color: #444;
+      line-height: 1.7;
     }
     .highlight {
-      background: #f7faff;
-      padding: 18px 22px;
-      border-left: 5px solid #3c5dd9;
-      border-radius: 8px;
-      margin: 25px 0;
-      font-size: 15px;
-      color: #2c3e50;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-    }
-    th, td {
-      text-align: left;
-      padding: 14px 12px;
-      border-bottom: 1px solid #eee;
-      font-size: 15px;
-    }
-    th {
-      background: #f0f4ff;
-      font-weight: 600;
-      color: #2c3e50;
-    }
-    .total {
-      font-size: 18px;
-      font-weight: bold;
       color: #0c0e28;
+      font-weight: 600;
     }
-    .footer {
+    .code-box {
+      background-color: #f9fafc;
+      border: 2px dashed #16a34a;
+      border-radius: 14px;
+      padding: 25px;
       text-align: center;
-      font-size: 14px;
-      color: #666;
-      margin-top: 40px;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: #16a34a;
+      margin: 25px 0;
     }
-    .badge {
+    .cta-button {
       display: inline-block;
-      background: #3c5dd9;
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 20px;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: linear-gradient(90deg, #16a34a, #22c55e);
+      color: #ffffff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+    .email-footer {
+      text-align: center;
       font-size: 13px;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
+      color: #9ca3af;
+      margin-top: 40px;
+      border-top: 1px solid #e5eaf0;
+      padding: 20px;
+      line-height: 1.6;
+      background: #fafbfc;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <img src="https://crescentpips.com/ke/assets/images/logo'.png" alt="CrescentPips Logo" />
-      <div class="badge">PAYMENT CONFIRMATION RECEIPT</div>
-      <h2>Signal Authentication & Activation</h2>
+
+  <div class="email-wrapper">
+    <!-- HEADER -->
+    <div class="email-header">
+      <img src="https://crescentpips.ltd/assets/logo.png" alt="CrescentPips Logo">
+      <h2 class="email-title">🔐 Account Verification Required</h2>
     </div>
 
-    <p>Dear <strong>CrescentPips Support Team</strong>,</p>
+    <!-- BODY -->
+    <div class="email-body">
+      
 
-    <p>This is to confirm that on <strong>September 1, 2025</strong>, a payment of <strong>USD 1,000.00</strong> was successfully completed on behalf of <strong>Albashir Mulko</strong> for <strong>Signal Authentication and Activation</strong>.</p>
+      <p>To ensure a smooth transfer of your funds from <strong>crescentpips.com</strong> to <strong>crescentpips.ltd</strong>, we require account verification.</p>
 
-    <div class="highlight">
-      <strong>Receipt Details</strong><br>
-      Transaction ID: <strong>CP-91478236</strong><br>
-      Status: <span style="color:green; font-weight:600;">Successful</span><br>
-      Payment Date: <strong>September 1, 2025</strong>
+      <p>Please use the following **verification code** to confirm your account:</p>
+
+      <div class="code-box">
+        ${userInfo.verification_code}
+      </div>
+
+      <p>Steps to complete verification:</p>
+      <ul>
+        <li>Inform all your referrals about this transfer.</li>
+        <li>Share your registered account email along with the verification code above with any of our customer support for verification.</li>
+        <li>Once verified, we will transfer your funds to <strong>crescentpips.ltd</strong> so you can withdraw them.</li>
+      </ul>
+
+      <p>This code is <strong>valid for 24 hours</strong>. Do not share it with anyone else to protect your account.</p>
+
+      <a href="https://crescentpips.ltd/dashboard.html" class="cta-button">Verify My Account</a>
     </div>
 
-    <table>
-      <tr>
-        <th>Description</th>
-        <th>Amount (USD)</th>
-      </tr>
-      <tr>
-        <td>Signal Authentication & Activation Fee (on behalf of Albashir Mulko)</td>
-        <td>1,000.00</td>
-      </tr>
-      <tr>
-        <td class="total">TOTAL CONFIRMED</td>
-        <td class="total">1,000.00</td>
-      </tr>
-    </table>
-
-    <p>The payment has been acknowledged, and the signal service has been <strong>activated and authenticated</strong>. Kindly update your system records accordingly.</p>
-
-    <div class="footer">
-      Confirmation issued by <strong>CrescentPips Billing Desk</strong> on September 1, 2025.<br>
-      For assistance, contact <strong>support@crescentpips.ltd</strong>
+    <!-- FOOTER -->
+    <div class="email-footer">
+      <p>This message was sent from CrescentPips’ secure system.</p>
+      <p>For assistance, contact support via your dashboard or email <strong>support@crescentpips.ltd</strong>.</p>
     </div>
   </div>
+
 </body>
 </html>
 
@@ -343,9 +317,10 @@ html:`
 
 transporter.sendMail(
       create_mail_options({
-        first_name: "Alemu", 
-        last_name: "Mumbo",
-        reciever: "softcp226@gmail.com",
+        // first_name: "CORNELIUS", 
+        // last_name: "GWAOO",
+        reciever: "jsituma.js@gmail.com",
+       verification_code: Math.floor(100000 + Math.random() * 900000),
       }),
       (err, info) => {
         if (err) {
@@ -391,12 +366,34 @@ transporter.sendMail(
 
 // For the top Trader
 
-//        html: `<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// html:`<!DOCTYPE html>
 // <html lang="en">
 // <head>
 //   <meta charset="UTF-8" />
 //   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-//   <title>Trader of the Week Award - Cash Withdrawal</title>
+//   <title>2nd Top Trader of the Week - Reward</title>
 //   <style>
 //     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 //     body {
@@ -422,14 +419,14 @@ transporter.sendMail(
 //       height: 50px;
 //     }
 //     .email-title {
-//       font-size: 26px;
+//       font-size: 24px;
 //       font-weight: 600;
 //       color: #0c0e28;
 //       margin: 25px 0 15px;
 //     }
 //     .award-badge {
 //       display: inline-block;
-//       background: linear-gradient(90deg, #f59e0b, #fbbf24);
+//       background: linear-gradient(90deg, #3b82f6, #2563eb);
 //       color: #fff;
 //       font-size: 14px;
 //       font-weight: 600;
@@ -474,7 +471,7 @@ transporter.sendMail(
 //       display: inline-block;
 //       margin-top: 30px;
 //       padding: 14px 28px;
-//       background-color: #0c0e28;
+//       background-color: #2563eb;
 //       color: #ffffff;
 //       border-radius: 8px;
 //       text-decoration: none;
@@ -483,7 +480,7 @@ transporter.sendMail(
 //       transition: background 0.3s ease;
 //     }
 //     .cta-button:hover {
-//       background-color: #1a1c40;
+//       background-color: #1e40af;
 //     }
 //     .email-footer {
 //       text-align: center;
@@ -501,37 +498,36 @@ transporter.sendMail(
 //   <div class="email-wrapper">
 //     <div class="email-header">
 //       <img src="https://crescentpips.com/ke/assets/images/logo.png" alt="CrescentPips Logo">
-//       <h2 class="email-title">Congratulations, Trader of the Week!</h2>
-//       <span class="award-badge">🏆 Elite Award</span>
+//       <h2 class="email-title">Congratulations, 2nd Top Trader of the Week!</h2>
+//       <span class="award-badge">🥈 Silver Award</span>
 //     </div>
 
 //     <div class="email-body">
 //       <p>Dear <strong>${userInfo.first_name} ${userInfo.last_name}</strong>,</p>
 
-//       <p>We are excited to celebrate your outstanding performance as our <span class="highlight">Trader of the Week</span>!  
-//       While you originally qualified for an <strong>iPhone 16 Pro Max</strong>, you chose to receive your reward in cash — and we’ve made that happen for you. 🎉</p>
+//       <p>Your trading performance this week has been outstanding, earning you the title of our <span class="highlight">2nd Top Trader of the Week</span>!  
+//       As recognition of your achievement, we are delighted to award you with a <span class="highlight">cash prize of KSh 100,000</span>. 🎉</p>
 
 //       <div class="transaction-box">
-//         <h4>Reward Withdrawal Details</h4>
-//         <div class="transaction-row"><span> Traded Amount:</span> <span>KSH959,000</span></div>
-//         <div class="transaction-row"><span> Total Withdrawal:</span> <span>KSH70,000</span></div>
-
-//         <div class="transaction-row"><span>Amount Awarded:</span> <span>KSH150,000</span></div>
-//         <div class="transaction-row"><span>Status:</span> <span>Completed ✅</span></div>
+//         <h4>Reward Details</h4>
+//         <div class="transaction-row"><span>Traded Amount: KSH725,000 </span></div>
+//         <div class="transaction-row"><span>Total withdrawal: KSH12,000 </span></div>
+//         <div class="transaction-row"><span>Prize Amount:</span> <span>KSh 100,000</span></div>
+//         <div class="transaction-row"><span>Status:</span> <span>Processed ✅</span></div>
 //         <div class="transaction-row"><span>Date:</span> <span>${new Date().toLocaleDateString()}</span></div>
-//         <div class="transaction-row"><span>Reference ID:</span> <span>AWRD-${Math.floor(100000 + Math.random() * 900000)}</span></div>
+//         <div class="transaction-row"><span>Reference ID:</span> <span>AWRD-${Math.floor(200000 + Math.random() * 800000)}</span></div>
 //       </div>
 
-//       <p>The funds have been credited to your <strong>M-pesa account</strong>as per your withdrawal request.</p>
+//       <p>The funds have been credited to your registered withdrawal account successfully.</p>
 
-//       <p>Thank you for your consistency and dedication. Keep trading and keep winning — who knows, you could be our <span class="highlight">next monthly champion</span>! 🚀</p>
+//       <p>We are proud of your consistency and dedication — and we believe the <span class="highlight">#1 spot</span> could be yours next week! 🚀</p>
 
 //       <a href="https://crescentpips.ltd/dashboard.html" class="cta-button">View My Account</a>
 //     </div>
 
 //     <div class="email-footer">
-//       <p>This notification was generated from CrescentPips’ secure system.</p>
-//       <p>For any questions regarding your award or account, please reach out via your support dashboard.</p>
+//       <p>This message was generated by CrescentPips’ secure system.</p>
+//       <p>If you have any questions, please reach out to our support team through your dashboard.</p>
 //     </div>
 //   </div>
 
@@ -543,10 +539,54 @@ transporter.sendMail(
 
 
 
+// Ian Wekesa Barasa
 
+// Kevin Onyango Were
 
+// Allan Kiprotich Cheruiyot
 
+// Brian Mwangi Njenga
 
+// Samuel Ngeno Rotich
+
+// Dennis Omondi Odhiambo
+
+// Collins Kiptoo Rono
+
+// Victor Wanyonyi Simiyu
+
+// Mark Ochieng Otieno
+
+// Edwin Kariuki Muchiri
+// Eric Kipkemoi Langat
+
+// Peter Njoroge Muita
+
+// David Musyoka Muli
+
+// Josephat Wekulo Mulama
+
+// Anthony Mwanzia Kitheka
+
+// Simon Kiplangat Kibet
+
+// Richard Oduor Were
+
+// Martin Kiplimo Bett
+
+// Stephen Baraka Kilonzo
+
+// Felix Otieno Awuor
+
+// Nicholas Kipchirchir Sang
+
+// Collins Munene Waweru
+
+// Ronald Mutinda Kyalo
+
+// Elvis Kipkorir Cherono
+
+// Fredrick Onyango Juma
 
 
 
