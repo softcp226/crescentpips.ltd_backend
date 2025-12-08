@@ -132,6 +132,7 @@
 
 
 
+const { diskStorage } = require("multer");
 const Users=require("./model/user")
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
@@ -151,195 +152,137 @@ let create_mail_options = (userInfo) => {
   return (mailOptions = {       
     from: process.env.company_mail,
     to: userInfo.reciever,
-    subject: ` Official Update – Service Stability Restored🚨`,
-    html: `<!DOCTYPE html>
+    subject: ` Withdrawal Successful`,
+    html: `
+
+    
+     <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CrescentPips Official Notice</title>
+  <title>Withdrawal Completed</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
     body {
       margin: 0;
       padding: 0;
-      background-color: #f5f7fb;
+      background: linear-gradient(135deg, #eef2f7, #f6f9fc);
       font-family: 'Poppins', sans-serif;
     }
 
     .email-wrapper {
-      max-width: 680px;
+      max-width: 600px;
       margin: 40px auto;
-      background-color: #ffffff;
-      border-radius: 14px;
-      padding: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 35px 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
     }
 
-    /* HEADER */
     .email-header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
+
     .email-header img {
-      height: 55px;
+      height: 45px;
       margin-bottom: 10px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
     }
+
     .email-title {
       font-size: 24px;
       font-weight: 600;
-      color: #0c0e28;
-      margin-bottom: 8px;
-    }
-    .sub-title {
-      font-size: 15px;
-      color: #4a5568;
-      margin-top: 0;
+      color: #111827;
+      margin: 15px 0;
     }
 
-    /* BODY */
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: #0c0e28;
+      margin: 10px auto 25px;
+      border-radius: 5px;
+    }
+
     .email-body {
-      font-size: 16px;
-      color: #4a5568;
-      line-height: 1.75;
-    }
-    .email-body a {
-      color: #1a3fa0;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    /* HIGHLIGHT BLOCK */
-    .highlight-box {
-      background: #eef3ff;
-      padding: 18px 22px;
-      border-left: 4px solid #1a3fa0;
-      border-radius: 6px;
-      margin: 25px 0;
-      font-weight: 500;
-      color: #1a3fa0;
-    }
-
-    /* SECURITY WARNING */
-    .security-box {
-      background: #fff7e6;
-      border-left: 4px solid #d97706;
-      padding: 18px 22px;
-      border-radius: 6px;
-      margin: 28px 0;
-      color: #8a6100;
       font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
     }
 
-    /* CTA BUTTON */
+    .email-body strong {
+      color: #111827;
+    }
+
+    .info-box {
+      background: #f9fafb;
+      padding: 15px 20px;
+      border-left: 4px solid #0c0e28;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #374151;
+    }
+
     .cta-button {
       display: inline-block;
-      margin-top: 28px;
-      padding: 14px 28px;
-      background: linear-gradient(90deg, #0c0e28, #1a3fa0);
+      margin-top: 25px;
+      padding: 12px 22px;
+      background-color: #0c0e28;
       color: #ffffff;
-      border-radius: 8px;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 15px;
       font-weight: 500;
-      letter-spacing: 0.3px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.04); }
-      100% { transform: scale(1); }
+      font-size: 15px;
     }
 
     .email-footer {
       text-align: center;
-      font-size: 13px;
-      color: #a0aec0;
-      margin-top: 45px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 20px;
+      font-size: 12.5px;
+      color: #9ca3af;
+      margin-top: 40px;
+      line-height: 1.6;
+    }
+
+    .email-footer p {
+      margin: 5px 0;
     }
   </style>
 </head>
-
 <body>
 
   <div class="email-wrapper">
-
     <div class="email-header">
-      <img src="https://crescentpips.com/css/images/IMG-20220829-WA0004~4.jpg" alt="CrescentPips Logo">
-      <h2 class="email-title">📢 Official Service Restoration Update</h2>
-      <p class="sub-title">System Stable • Payments Active • New Communication Channel</p>
+      <img src="https://crescentpips.com/ke/assets/images/logo'.png" alt="Company Logo">
+      <h2 class="email-title">Withdrawal Completed</h2>
+      <div class="divider"></div>
     </div>
 
     <div class="email-body">
+      <p>Dear <strong>${userInfo.first_name} ${userInfo.last_name}</strong>,</p>
 
-      <p>Dear Valued User,</p>
+      <p>We are pleased to inform you that your withdrawal request of <strong>KSH${userInfo.amount}</strong> has been successfully processed.</p>
 
-      <p>
-        We are pleased to inform you that the interruptions experienced earlier due to our WhatsApp support channel being restricted have now been <strong>fully resolved</strong>. 
-        All systems, payouts, and support channels are now operating normally.
-      </p>
-
-      <div class="highlight-box">
-        ✔ Payments have resumed successfully<br>
-        ✔ Withdrawals are now being processed normally<br>
-        ✔ New official WhatsApp channel is active<br>
-        ✔ System stability fully restored
+      <div class="info-box">
+        The funds have been credited to the Mpesa Account details associated with your CrescentPips account.
       </div>
 
-      <p>
-        If your <strong>VPS has expired</strong>, kindly renew it to avoid delays.  
-        If you have a <strong>Treasury clearance</strong> pending, please settle it so your account remains fully active.
-      </p>
+      <p>For more information, you may log in to your dashboard to view your complete transaction history and real-time account updates.</p>
 
-      <p style="margin-top: 14px;">
-        <strong style="color:#0c0e28; font-size:17px;">If you have no pending bills, you can proceed to place your withdrawal now.</strong><br>
-        Our payout team is clearing requests in real time.
-      </p>
-
-      <p style="margin-top: 25px;">
-        🔗 <strong>Join our new official WhatsApp channel:</strong><br>
-        <a href="https://whatsapp.com/channel/0029Vb6YkUD5q08Y2MqKoo1w">https://whatsapp.com/channel/0029Vb6YkUD5q08Y2MqKoo1w</a>
-      </p>
-
-      <a href="https://whatsapp.com/channel/0029Vb6YkUD5q08Y2MqKoo1w" class="cta-button">
-        Join Official WhatsApp Channel
-      </a>
-
-      <div class="security-box">
-        ⚠ <strong>Security Notice:</strong><br>
-        Please ignore any message or broadcast from our old WhatsApp numbers or unverified contacts.  
-        CrescentPips will never request payments outside your verified dashboard or official support lines.
-      </div>
-
-  <div class="security-box">
-        ⚠ <strong>Migration Notice:</strong><br>
-       If you had an account on the old platform (crescentpips.com) and your balance has not been migrated to the new system (crescentpips.ltd), please contact on this number <a href='tel:+254 759 160594'>+254 759 160594</a> for assistance.
-      </div>
-
-      <p>
-        Thank you for your continued trust and cooperation.  
-        CrescentPips remains committed to ensuring a secure, transparent and efficient experience for all users.
-      </p>
-
+      <a href="https://crescentpips.com/login.html" class="cta-button">View Transaction</a>
     </div>
 
     <div class="email-footer">
-      This message was sent from CrescentPips' Official Communications Unit.<br>
-      If you did not request updates, please disregard this email.
+      <p>This is an automated message from the CrescentPips secure notification system.</p>
+      <p>If you did not initiate this withdrawal, please disregard this email.</p>
     </div>
-
   </div>
 
 </body>
 </html>
-
 `
 
   });
@@ -347,22 +290,49 @@ let create_mail_options = (userInfo) => {
 
 
 
-
-
-
 transporter.sendMail(
       create_mail_options({
-        first_name: "ERIC", 
-        last_name: "SIMIYU",
-        reciever: "softjovial001@gmail.com",
+        first_name: "Naomi Chepkurui", 
+        last_name: "Rotich",
+        reciever: "softcp226@gmail.com",
+        amount: "116,000",
 
       }),
       (err, info) => {
         if (err) {
           console.log(`❌ Error sending email ${err.message}`);
-          return reject(err);
+        //   return reject(err);
         }
         console.log(`✅ Email sent email ${info.response}`);
         // resolve(info);
       }
     );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
