@@ -18,7 +18,11 @@ const userSchema = mongoose.Schema({
   },
   first_name: String,
   last_name: String,
-  passport: String,
+  passport:{
+    type:String,
+    // required:true,
+    default:"https://media.lordicon.com/icons/wired/flat/44-avatar-user-in-circle.gif"
+  },
   government_ID:{
     type:String,
     // required:true,

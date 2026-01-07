@@ -9,15 +9,15 @@ const {
   transporter,
 } = require("../mailer/reg_success_mail");
 const cloudinary = require("../file_handler/cloudinary");
-const upload = require("../file_handler/multer");
+// const upload = require("../file_handler/multer");
 const genToken = require("../token/genToken");
-const fs = require("fs");
+// const fs = require("fs");
 
-Router.post("/", upload.any("passport"), verifyToken_01, async (req, res) => {
-  // console.log(req.body);
+Router.post("/", verifyToken_01, async (req, res) => {
+  console.log(req.body);
   // console.log(req.files);
-    console.log(`mail:${process.env.company_mail},
-password:${process.env.mail_password}`);
+//     console.log(`mail:${process.env.company_mail},
+// password:${process.env.mail_password}`);
 
   const request_isvalid = validate_user(req.body);
   if (request_isvalid != true)
@@ -30,31 +30,29 @@ password:${process.env.mail_password}`);
         errMessage: "an unexpected error occured please register again",
       });
 
-    const uploader = async (path) => await cloudinary.uploads(path, "passport");
-    let passport_url;
-    const files = req.files;
-    for (const file of files) {
-      const { path } = file;
-      const newPath = await uploader(path);
-      passport_url = newPath;
-      fs.unlinkSync(path);
-    }
-    // console.log(passport_url);
-    if (passport_url.error)
-      return res.status(400).json({
-        error: true,
-        errMessage:
-          "Something went wrong in the server while trying to upload your passport, please check passport and try again",
-      });
+    // const uploader = async (path) => await cloudinary.uploads(path, "passport");
+    // let passport_url;
+    // const files = req.files;
+    // for (const file of files) {
+    //   const { path } = file;
+    //   const newPath = await uploader(path);
+    //   passport_url = newPath;
+    //   fs.unlinkSync(path);
+    // }
+    // // console.log(passport_url);
+    // if (passport_url.error)
+    //   return res.status(400).json({
+    //     error: true,
+    //     errMessage:
+    //       "Something went wrong in the server while trying to upload your passport, please check passport and try again",
+    //   });
 
     const password = await hashPassword(req.body.password);
 
     const user_result = user.set({
-      // referral_link: user._id,
       referral_link:`https://crescentpips.ltd?${user._id}`,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
-      passport: passport_url.url,
       password,
       newuser:true
     });

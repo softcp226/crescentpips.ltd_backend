@@ -10,6 +10,21 @@ Router.post("/", async (req, res) => {
   if (isvalid != true)
     return res.status(400).json({ error: true, errMessage: isvalid });
 
+const checkaccounttype =(country)=>{
+
+  switch(country){
+    // case "Kenya":
+    //   return "KES"
+    case "Uganda":
+      return "UGX"
+    case "Tanzania":
+      return "TZS"
+      default:
+        return "KES"
+  }
+}
+
+
   try {
     const user = await User.findOne({ email: req.body.email });
     // console.log(user);
@@ -21,8 +36,7 @@ Router.post("/", async (req, res) => {
           phone_number: req.body.phone_number,
           country: req.body.country,
           // referral_link: `https://www.softjovial.com?${u}`,
-           account_type:req.body.country =="Kenya"?"KES":"USD",
-
+           account_type:checkaccounttype(req.body.country),
           referral_link: `https://crescentpips.ltd?${req.body.email}`,
 
           referral: req.body.referral,
