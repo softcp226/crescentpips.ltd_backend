@@ -97,8 +97,8 @@ const userSchema = mongoose.Schema({
   account_type:{
      type:String,
     required:true,
-    default:"USD",
-    enum:["KES","USD"],
+    // default:"USD",
+    enum:["UGX", "TZS", "KES", "USD"],
   },
   // created_same_investment_ealier: {
   //   type: Number,

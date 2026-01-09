@@ -734,3 +734,129 @@
 [2026-01-07T12:19:05.555Z] Error: connected to user database
 [2026-01-07T12:19:05.554Z] Error: connected to user database
 [2026-01-07T12:19:05.555Z] Error: connected to recover password db
+[2026-01-09T04:29:10.204Z] Error: connected to admin database
+[2026-01-09T04:29:10.206Z] Error: connected to user database
+[2026-01-09T04:29:10.207Z] Error: connected to transaction database
+[2026-01-09T04:29:10.206Z] Error: connected to deposit_request database
+[2026-01-09T04:29:10.208Z] Error: connected to user database
+[2026-01-09T04:29:10.209Z] Error: connected to withdrawal request database
+[2026-01-09T04:29:10.208Z] Error: connected to transaction database
+[2026-01-09T04:29:10.212Z] Error: connected to recover password db
+[2026-01-09T04:29:10.211Z] Error: connected to user database
+[2026-01-09T04:31:56.386Z] Error: connected to admin database
+[2026-01-09T04:31:56.388Z] Error: connected to user database
+[2026-01-09T04:31:56.389Z] Error: connected to deposit_request database
+[2026-01-09T04:31:56.390Z] Error: connected to transaction database
+[2026-01-09T04:31:56.391Z] Error: connected to transaction database
+[2026-01-09T04:31:56.393Z] Error: connected to withdrawal request database
+[2026-01-09T04:31:56.391Z] Error: connected to user database
+[2026-01-09T04:31:56.396Z] Error: connected to recover password db
+[2026-01-09T04:31:56.395Z] Error: connected to user database
+[2026-01-09T04:32:41.193Z] Error: connected to admin database
+[2026-01-09T04:32:41.195Z] Error: connected to user database
+[2026-01-09T04:32:41.196Z] Error: connected to deposit_request database
+[2026-01-09T04:32:41.197Z] Error: connected to transaction database
+[2026-01-09T04:32:41.199Z] Error: connected to user database
+[2026-01-09T04:32:41.205Z] Error: connected to withdrawal request database
+[2026-01-09T04:32:41.206Z] Error: connected to user database
+[2026-01-09T04:32:41.207Z] Error: connected to recover password db
+[2026-01-09T04:32:41.203Z] Error: connected to transaction database
+[2026-01-09T04:33:56.315Z] Error: connected to admin database
+[2026-01-09T04:33:56.316Z] Error: connected to user database
+[2026-01-09T04:33:56.317Z] Error: connected to deposit_request database
+[2026-01-09T04:33:56.317Z] Error: connected to transaction database
+[2026-01-09T04:33:56.318Z] Error: connected to user database
+[2026-01-09T04:33:56.319Z] Error: connected to transaction database
+[2026-01-09T04:33:56.327Z] Error: connected to withdrawal request database
+[2026-01-09T04:33:56.328Z] Error: connected to user database
+[2026-01-09T04:33:56.329Z] Error: connected to recover password db
+[2026-01-09T04:34:16.128Z] Error: connected to admin database
+[2026-01-09T04:34:16.129Z] Error: connected to user database
+[2026-01-09T04:34:16.129Z] Error: connected to deposit_request database
+[2026-01-09T04:34:16.130Z] Error: connected to transaction database
+[2026-01-09T04:34:16.130Z] Error: connected to user database
+[2026-01-09T04:34:16.132Z] Error: connected to withdrawal request database
+[2026-01-09T04:34:16.129Z] Error: connected to transaction database
+[2026-01-09T04:34:16.134Z] Error: connected to recover password db
+[2026-01-09T04:34:16.133Z] Error: connected to user database
+[2026-01-09T04:34:50.810Z] Error: connected to admin database
+[2026-01-09T04:34:50.813Z] Error: connected to user database
+[2026-01-09T04:34:50.817Z] Error: connected to deposit_request database
+[2026-01-09T04:34:50.825Z] Error: connected to withdrawal request database
+[2026-01-09T04:34:50.826Z] Error: connected to user database
+[2026-01-09T04:34:50.827Z] Error: connected to recover password db
+[2026-01-09T04:34:50.819Z] Error: connected to transaction database
+[2026-01-09T04:34:50.821Z] Error: connected to user database
+[2026-01-09T04:34:50.823Z] Error: connected to transaction database
+[2026-01-09T04:35:22.190Z] Error: connected to admin database
+[2026-01-09T04:35:22.192Z] Error: connected to user database
+[2026-01-09T04:35:22.201Z] Error: connected to deposit_request database
+[2026-01-09T04:35:22.217Z] Error: connected to transaction database
+[2026-01-09T04:35:22.222Z] Error: connected to user database
+[2026-01-09T04:35:22.231Z] Error: connected to user database
+[2026-01-09T04:35:22.234Z] Error: connected to recover password db
+[2026-01-09T04:35:22.225Z] Error: connected to transaction database
+[2026-01-09T04:35:22.229Z] Error: connected to withdrawal request database
+[2026-01-09T04:44:03.419Z] Error: connected to admin database
+[2026-01-09T04:44:03.419Z] Error: connected to user database
+[2026-01-09T04:44:03.420Z] Error: connected to deposit_request database
+[2026-01-09T04:44:03.420Z] Error: connected to transaction database
+[2026-01-09T04:44:03.422Z] Error: connected to withdrawal request database
+[2026-01-09T04:44:03.420Z] Error: connected to user database
+[2026-01-09T04:44:03.421Z] Error: connected to transaction database
+[2026-01-09T04:44:03.424Z] Error: connected to user database
+[2026-01-09T04:44:03.426Z] Error: connected to recover password db
+[2026-01-09T04:47:08.965Z] Error: connected to admin database
+[2026-01-09T04:47:08.967Z] Error: connected to user database
+[2026-01-09T04:47:08.968Z] Error: connected to deposit_request database
+[2026-01-09T04:47:08.969Z] Error: connected to transaction database
+[2026-01-09T04:47:08.974Z] Error: connected to user database
+[2026-01-09T04:47:08.975Z] Error: connected to transaction database
+[2026-01-09T04:47:08.978Z] Error: connected to withdrawal request database
+[2026-01-09T04:47:08.979Z] Error: connected to user database
+[2026-01-09T04:47:08.979Z] Error: connected to recover password db
+[2026-01-09T05:20:12.096Z] Error: connected to admin database
+[2026-01-09T05:20:12.111Z] Error: connected to user database
+[2026-01-09T05:20:12.115Z] Error: connected to deposit_request database
+[2026-01-09T05:20:12.119Z] Error: connected to transaction database
+[2026-01-09T05:20:12.120Z] Error: connected to user database
+[2026-01-09T05:20:12.121Z] Error: connected to transaction database
+[2026-01-09T05:20:12.127Z] Error: connected to withdrawal request database
+[2026-01-09T05:20:12.130Z] Error: connected to user database
+[2026-01-09T05:20:12.132Z] Error: connected to recover password db
+[2026-01-09T05:21:03.956Z] Error: connected to admin database
+[2026-01-09T05:21:03.957Z] Error: connected to transaction database
+[2026-01-09T05:21:03.956Z] Error: connected to user database
+[2026-01-09T05:21:03.957Z] Error: connected to deposit_request database
+[2026-01-09T05:21:03.957Z] Error: connected to user database
+[2026-01-09T05:21:03.958Z] Error: connected to withdrawal request database
+[2026-01-09T05:21:03.959Z] Error: connected to user database
+[2026-01-09T05:21:03.958Z] Error: connected to transaction database
+[2026-01-09T05:21:03.959Z] Error: connected to recover password db
+[2026-01-09T05:22:34.370Z] Error: connected to admin database
+[2026-01-09T05:22:34.371Z] Error: connected to user database
+[2026-01-09T05:22:34.371Z] Error: connected to deposit_request database
+[2026-01-09T05:22:34.371Z] Error: connected to transaction database
+[2026-01-09T05:22:34.372Z] Error: connected to user database
+[2026-01-09T05:22:34.372Z] Error: connected to transaction database
+[2026-01-09T05:22:34.373Z] Error: connected to withdrawal request database
+[2026-01-09T05:22:34.373Z] Error: connected to user database
+[2026-01-09T05:22:34.373Z] Error: connected to recover password db
+[2026-01-09T05:55:31.329Z] Error: connected to admin database
+[2026-01-09T05:55:31.330Z] Error: connected to deposit_request database
+[2026-01-09T05:55:31.330Z] Error: connected to user database
+[2026-01-09T05:55:31.330Z] Error: connected to transaction database
+[2026-01-09T05:55:31.332Z] Error: connected to withdrawal request database
+[2026-01-09T05:55:31.331Z] Error: connected to transaction database
+[2026-01-09T05:55:31.332Z] Error: connected to user database
+[2026-01-09T05:55:31.332Z] Error: connected to recover password db
+[2026-01-09T05:55:31.331Z] Error: connected to user database
+[2026-01-09T05:55:47.423Z] Error: connected to admin database
+[2026-01-09T05:55:47.424Z] Error: connected to user database
+[2026-01-09T05:55:47.427Z] Error: connected to transaction database
+[2026-01-09T05:55:47.428Z] Error: connected to withdrawal request database
+[2026-01-09T05:55:47.429Z] Error: connected to user database
+[2026-01-09T05:55:47.430Z] Error: connected to recover password db
+[2026-01-09T05:55:47.425Z] Error: connected to deposit_request database
+[2026-01-09T05:55:47.425Z] Error: connected to transaction database
+[2026-01-09T05:55:47.426Z] Error: connected to user database

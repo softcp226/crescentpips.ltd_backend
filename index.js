@@ -126,7 +126,7 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`running on port ${port}`));
 
 
-// api/admin/user/investment_min/raise /api/user/updateprofileInfo/setprofile withdraw
+// /api/user/transactions/fetch api/admin/user/investment_min/raise /api/user/updateprofileInfo/setprofile withdraw
 
 
 

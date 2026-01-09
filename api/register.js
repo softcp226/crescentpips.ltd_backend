@@ -13,8 +13,7 @@ Router.post("/", async (req, res) => {
 const checkaccounttype =(country)=>{
 
   switch(country){
-    // case "Kenya":
-    //   return "KES"
+   
     case "Uganda":
       return "UGX"
     case "Tanzania":
@@ -60,7 +59,7 @@ const checkaccounttype =(country)=>{
       email: req.body.email,
       phone_number: req.body.phone_number,
       country: req.body.country,
-      account_type:req.body.country != "Kenya" ? "USD" : "KES",
+           account_type:checkaccounttype(req.body.country),
       // referral_link: `https://www.softjovial.com?${req.body.email}`,
       referral_link: `https://crescentpips.ltd?${req.body.email}`,
 

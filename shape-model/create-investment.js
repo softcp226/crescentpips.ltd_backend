@@ -58,6 +58,33 @@ const select_investment_end_time = (req) => {
   // }
 };
 
+
+
+const checkAccountType = (account_type,amount)=>{
+  switch(account_type){
+    case "UGX":
+      return `UGX${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`; 
+    case "KES": 
+      return `KSH${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    case "TZS":
+      return `TZS${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    case "USD":
+      return `$${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+
+      default:
+        return `$${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;   
+
+        
+  } 
+  // default:
+  //   return `$${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;   
+
+
+
+}
+
+
+
 const create_investment = async (req,userdetails) => {
   let currentdate = new Date();
   let datetime = `${currentdate.getFullYear()}-${
@@ -83,10 +110,10 @@ const create_investment = async (req,userdetails) => {
     user: req.body.user,
     refrence_number: `#Create Trade`,
     transaction_date: datetime,
-    debit: `-${userdetails.account_type =='KES'?'KSH':"$"}${req.body.investment_amount
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-    
+    // debit: `-${userdetails.account_type =='KES'?'KSH':"$"}${req.body.investment_amount
+    //   .toString()
+    //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+    debit: `-${checkAccountType(userdetails.account_type,req.body.investment_amount)}`,
     status: "success",
   });
 console.log(transaction)

@@ -54,6 +54,32 @@ const Deposit_request = require("../model/deposit_request");
 const Transaction = require("../model/transaction");
 const select_payment_method = require("./select_payment_method");
 
+const checkAccountType = (account_type,amount)=>{
+  switch(account_type){
+    case "UGX":
+      return `UGX${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`; 
+    case "KES": 
+      return `KSH${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    case "TZS":
+      return `TZS${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    case "USD":
+      return `$${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+
+      default:
+        return `$${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;   
+
+        
+  } 
+  // default:
+  //   return `$${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;   
+
+
+
+}
+
+
+
+
 const create_deposit = async (req,userdetails) => {
   console.log(req.body.payment_method);
   let currentdate = new Date();
@@ -66,9 +92,11 @@ const create_deposit = async (req,userdetails) => {
     user: req.body.user,
     refrence_number: `#Deposit `,
     transaction_date: datetime,
-    credit: `+${userdetails.account_type =='KES'?'KSH':"$"}${req.body.deposit_amount
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+    // credit: `+${userdetails.account_type =='KES'?'KSH':"$"}${req.body.deposit_amount
+    //   .toString()
+    //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+    credit: checkAccountType(userdetails.account_type,req.body.deposit_amount),
+
     status: "pending",
   });
   // console.log("transaction", transaction._id);
