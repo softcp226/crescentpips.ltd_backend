@@ -6,7 +6,7 @@ const validate_find_user = require("../validation/validate_find_user");
 const check_inv_expiration = require("../api_func/check_invest_exp");
 
 Router.post("/", verifyToken, async (req, res) => {
-  // console.log(req.body)
+  try {
   const request_isvalid = validate_find_user(req.body);
   if (request_isvalid != true)
     return res.status(400).json({ error: true, errMessage: request_isvalid });
@@ -23,6 +23,12 @@ Router.post("/", verifyToken, async (req, res) => {
   // console.log(await check_inv_exp_result);
 
   res.status(200).json({ error: false, message: user });
+  } catch (error) { 
+
+    console.log(error)
+    res.status(500).json({error:true,errMessage:"an unexpected error occured please try again later"})
+  } 
+  
 });
 module.exports = Router;
 // console.log

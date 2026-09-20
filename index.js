@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(cors());
 const fs = require('fs');
 
-// /admin/user/addbill app.use("/", express.static("crescentpips-frontend"));
+// app.use('/', express.static('crescentpips.ltd_frontend'));
 
 const admin_login = require("./admin_api/login");
 app.use("/api/admin/login", admin_login);
